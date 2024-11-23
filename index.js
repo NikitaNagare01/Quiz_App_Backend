@@ -15,8 +15,13 @@ const PORT = process.env.PORT;
 
 const app = express();
 
-// cors
-app.use(cors());
+const corsOptions = {
+    origin: "https://online-quiz-frontend-two.vercel.app", // Allow only your frontend URL
+    methods: "GET,POST,PUT,DELETE", // Allowed HTTP methods
+    allowedHeaders: "Content-Type,Authorization", // Allowed headers
+  };
+  
+app.use(cors(corsOptions));
 
 //cookies
 app.use(cookieparser());
