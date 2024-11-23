@@ -40,8 +40,8 @@ mongoose.connect(DB,{
 }).catch((err)=> console.log('connection failed'));
 // require('./db/conn');
 
-app.use('/', (req, res)=>{
-    res.json({ok:"ok"})
+app.get('/', (req, res)=>{
+    return res.json({ok:"ok"})
 })
 
 app.use('/auth', require('./router/auth'))
@@ -54,7 +54,7 @@ app.use('/report', require('./router/report'));
 
 app.use((err, req, res, next)=>{
     console.log(err);
-    res.send('got error');
+    return res.send('got error');
 })
 
 
