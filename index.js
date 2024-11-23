@@ -18,7 +18,7 @@ const app = express();
 const corsOptions = {
     origin: "https://online-quiz-frontend-two.vercel.app", // Allow only your frontend URL
     methods: "GET,POST,PUT,DELETE", // Allowed HTTP methods
-    allowedHeaders: "Content-Type,Authorization", // Allowed headers
+    allowedHeaders: "Content-Type,Authorization,auth-token", // Allowed headers
   };
   
 app.use(cors(corsOptions));
